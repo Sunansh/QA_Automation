@@ -17,25 +17,23 @@ public class AmazonAutomation
 
         // Create a new instance of the Chrome driver
         WebDriver driver = new ChromeDriver();
-
-        try {
-            // Navigate to Amazon.in
-            driver.get("https://www.amazon.in");
+      //Navigate to Amazon
+        driver.get("https://www.amazon.in/");
 
             // Search for the product
-            WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
-            searchBox.sendKeys("Titan watch");
-            searchBox.submit();
+            WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
+            search.sendKeys("Puma Shoes");
+            search.submit();
 
             // Wait for results to load
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.a-price-whole")));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[2]/div/span/a/div/img")));
 
             // Capture product details
-            WebElement firstProduct = driver.findElement(By.cssSelector("div.s-main-slot div.s-result-item"));
-            String productName = firstProduct.findElement(By.cssSelector("h2 a span")).getText();
-            String productPrice = firstProduct.findElement(By.cssSelector("span.a-price-whole")).getText();
-            String productLink = firstProduct.findElement(By.cssSelector("h2 a")).getAttribute("href");
+            WebElement firstProduct = driver.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/div/h2/span"));
+            String productName = firstProduct.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/h2/a/span")).getText();
+            String productPrice = firstProduct.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[4]/div[2]/div[1]/a/span/span[2]/span[2]")).getText();
+            String productLink = firstProduct.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/h2/a/span")).getAttribute("href");
 
             System.out.println("Product Name: " + productName);
             System.out.println("Product Price: " + productPrice);
