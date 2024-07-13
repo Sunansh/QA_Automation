@@ -1,5 +1,5 @@
 package com.assignment.fend;
-public class AmazoAutomation
+public class AmazonAutomation
   {
     public static void main(String[] args)
     {
