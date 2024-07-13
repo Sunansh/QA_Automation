@@ -27,13 +27,13 @@ public class AmazonAutomation
 
             // Wait for results to load
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[2]/div/span/a/div/img")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[2]/div/span/a/div/img")));
 
             // Capture product details
-            WebElement firstProduct = driver.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/div/h2/span"));
-            String productName = firstProduct.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/h2/a/span")).getText();
-            String productPrice = firstProduct.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[4]/div[2]/div[1]/a/span/span[2]/span[2]")).getText();
-            String productLink = firstProduct.findElement(By.xpath("//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/h2/a/span")).getAttribute("href");
+            WebElement firstProduct = driver.findElement(By.xpath("//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/div/h2/span"));
+            String productName = firstProduct.findElement(By.xpath("//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/h2/a/span")).getText();
+            String productPrice = firstProduct.findElement(By.xpath("//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[4]/div[2]/div[1]/a/span/span[2]/span[2]")).getText();
+            String productLink = firstProduct.findElement(By.xpath("//*[@id='search']/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/span/div/div/div[3]/div[2]/h2/a/span")).getAttribute("href");
 
             System.out.println("Product Name: " + productName);
             System.out.println("Product Price: " + productPrice);
