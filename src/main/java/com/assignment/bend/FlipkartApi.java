@@ -1,15 +1,13 @@
-package com.ecommerce.backend;
+package com.assignment.bend;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AmazonApiTests {
-
-    // Base URL for the Amazon API (replace with the actual API endpoint)
-    private static final String BASE_URL = "https://affiliate.flipkart.com/api-docs"; // Placeholder URL
-
+public class FlipkartApi
+{
+private static final String BASE_URL = "https://affiliate.flipkart.com";
     @Test
     public void testProductSearch() {
         // Define the endpoint for searching products
@@ -21,7 +19,7 @@ public class AmazonApiTests {
         // Perform a GET request
         Response response = RestAssured
                 .given()
-                    .queryParam("query", Puma Shoes) // Set the query parameter
+                    .queryParam("query", "Puma Shoes") // Set the query parameter
                 .when()
                     .get("https://affiliate.flipkart.com/api-docs/af_prod_ref.html#get-1-0-search-format") // Execute the GET request
                 .then()
