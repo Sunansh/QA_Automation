@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AmazonAutomation
+public class FlipkartAutomation
   {
     public static void main(String[] args)
     {
