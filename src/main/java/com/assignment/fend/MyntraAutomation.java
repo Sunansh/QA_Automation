@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.JavascriptExecutor;
 
 import java.time.Duration;
 
@@ -25,28 +24,28 @@ public class MyntraAutomation
             // Search for the product
             WebElement search = driver.findElement(By.cssSelector("#desktop-header-cnt > div.desktop-bound > div.desktop-query > input"));
             search.sendKeys("Puma Shoes");
-            search.submit();
+            driver.findElement(By.cssSelector("#desktop-header-cnt > div.desktop-bound > div.desktop-query > a")).click();
 
             // Wait for results to load
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='17663246']/a/div[1]/div/div/div/picture/img")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='20313468']/a/div[1]/div/div/div/picture/img")));
 
             // Capture product details
-            WebElement firstProduct = driver.findElement(By.xpath("//*[@id='17663246']/a/div[2]"));
-            String productName = firstProduct.findElement(By.xpath("//*[@id='17663246']/a/div[2]/h4[1]")).getText();
-            String productPrice = firstProduct.findElement(By.xpath("//*[@id='17663246']/a/div[2]/div/span[1]/span[1]")).getText();
-            String productLink = firstProduct.findElement(By.xpath("//*[@id='17663246']/a")).getAttribute("href");
+            WebElement firstProduct = driver.findElement(By.xpath("//*[@id='20313468']/a/div[2]"));
+            String productName = firstProduct.findElement(By.xpath("//*[@id='20313468']/a/div[2]/h4[1]")).getText();
+            String productPrice = firstProduct.findElement(By.xpath("//*[@id='20313468']/a/div[2]/div/span[1]/span[1]")).getText();
+            String productLink = firstProduct.findElement(By.xpath("//*[@id='20313468']/a")).getAttribute("href");
 
             System.out.println("Product Name: " + productName);
             System.out.println("Product Price: " + productPrice);
             System.out.println("Product Link: " + productLink);
 
             // Click on the first product
-            firstProduct.findElement(By.xpath("//*[@id='17663246']/a")).click();
+            firstProduct.findElement(By.xpath("//*[@id='20313468']/a")).click();
 
             // Navigate to Add to Cart
 
-wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='mountRoot']/div/div[1]/main/div[2]/div[2]/div[2]/div[3]/div/div[1]"))).click();
+wait.until(ExpectedConditions.elementToBeClickable(By.xpath("///*[@id='mountRoot']/div/div[1]/main/div[2]/div[2]/div[2]/div[3]/div/div[1]"))).click();
 
             // Navigate to the Buy Now Screen
             wait.until(ExpectedConditions.elementToBeClickable(By.id("proceedToRetailCheckout"))).click();
