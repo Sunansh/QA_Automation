@@ -18,7 +18,7 @@ public class FlipkartAutomation
         // Create a new instance of the Chrome driver
         WebDriver driver = new ChromeDriver();
       //Navigate to Amazon
-        driver.get("https://www.amazon.in/");
+        driver.get("https://www.flipkart.in/");
 
             // Search for the product
             WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
