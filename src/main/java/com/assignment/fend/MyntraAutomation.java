@@ -46,7 +46,7 @@ public class AmazonAutomation
 
             // Navigate to Add to Cart
 
-wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button"))).click();
+wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='mountRoot']/div/div[1]/main/div[2]/div[2]/div[2]/div[3]/div/div[1]"))).click();
 
             // Navigate to the Buy Now Screen
             wait.until(ExpectedConditions.elementToBeClickable(By.id("proceedToRetailCheckout"))).click();
