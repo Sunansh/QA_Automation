@@ -10,7 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.time.Duration;
 
-public class AmazonAutomation
+public class MyntraAutomation
   {
     public static void main(String[] args)
     {
